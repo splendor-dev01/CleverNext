@@ -105,3 +105,43 @@ body{font-size:16px}.desktop-nav a{font-size:14px}.header-shop{font-size:13px}.e
 .site-footer .social-handle-line b{color:#171b18}
 .site-footer .footer-signoff strong{color:#171b18}
 .site-footer .footer-signoff strong span{color:#414741}
+
+/* Motion-led editorial storefront polish */
+@keyframes cn-rise-in{from{opacity:0;transform:translate3d(0,26px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes cn-soft-zoom{from{opacity:0;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+@keyframes cn-line-in{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(12px)}to{opacity:1;clip-path:inset(0);transform:translateY(0)}}
+.hero-product-copy .hero-kicker{display:inline-block;animation:cn-rise-in .7s cubic-bezier(.2,.75,.25,1) both}
+.hero-product-copy h1{animation:cn-line-in .85s .1s cubic-bezier(.2,.75,.25,1) both}
+.hero-tags{animation:cn-rise-in .75s .22s both}
+.hero-media video.is-ready{animation:cn-soft-zoom 1.2s ease both}
+.section-heading h2,.manifesto-main h2,.reviews-heading h2,.how-heading h2,.faq-intro h2,.contact-intro h2{text-wrap:balance}
+.section-heading .eyebrow,.manifesto-side .eyebrow,.reviews-section>.eyebrow,.how-section>.eyebrow,.faq-intro .eyebrow,.contact-intro .eyebrow{margin-bottom:13px}
+.section-heading h2,.manifesto-main h2,.reviews-heading h2,.how-heading h2,.faq-intro h2,.contact-intro h2{letter-spacing:-.07em}
+.heading-side p,.how-heading>p,.faq-intro>p,.contact-intro>p{max-width:42ch}
+.product-card{transition:transform .35s cubic-bezier(.2,.75,.25,1),box-shadow .35s}
+.product-card:hover{transform:translateY(-5px)}
+.product-info .product-description{max-width:32ch}
+.product-bottom{align-items:center}
+.price-note{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.035em;color:#171b18}
+.section-heading .heading-side p{margin-bottom:13px}
+.value-strip .value-point{transition:transform .3s ease}
+.value-strip .value-point:hover{transform:translateY(-3px)}
+/* Lightweight shared layout for informational pages */
+.info-page{max-width:1100px;margin:0 auto;padding:clamp(42px,7vw,90px) 5.1% 100px}
+.info-hero{padding:clamp(34px,6vw,72px) 0 38px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.info-eyebrow{font-size:11px;letter-spacing:.17em;font-weight:700;color:#65766a;text-transform:uppercase}
+.info-hero h1{font:600 clamp(42px,7vw,76px)/1.02 Manrope,sans-serif;letter-spacing:-.075em;margin:19px 0}
+.info-hero p{max-width:660px;font-size:clamp(16px,2vw,19px);line-height:1.75;color:#626b63}
+.info-meta{font-size:12px;color:#6c756d}
+.info-content{max-width:800px}
+.info-content h2{font:700 clamp(21px,3vw,28px)/1.2 Manrope,sans-serif;letter-spacing:-.045em;margin:36px 0 12px}
+.info-content h3{font:700 16px/1.4 Manrope,sans-serif;margin:23px 0 8px}
+.info-content p,.info-content li{font-size:15px;line-height:1.85;color:#414a43}
+.info-content ul{padding-left:22px}
+.info-callout{border:1px solid #dfe5dc;background:#f0f3ed;padding:20px 22px;margin:24px 0;color:#3c493e;line-height:1.75}
+.info-content a{color:#263e30;text-decoration:underline;text-underline-offset:3px}
+.info-footer-note{border-top:1px solid var(--line);margin-top:48px;padding-top:22px;font-size:12px;line-height:1.7;color:#737b74}
+.info-page .site-header{margin:0 calc(50% - 50vw)}
+.info-page .button{margin-top:12px}
+@media(max-width:760px){.info-page{padding-top:32px}.info-content p,.info-content li{font-size:14px}.info-content h2{margin-top:29px}}
+@media(prefers-reduced-motion:reduce){.hero-product-copy .hero-kicker,.hero-product-copy h1,.hero-tags,.hero-media video.is-ready{animation:none!important}.product-card,.value-strip .value-point{transition:none}}
