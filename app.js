@@ -51,3 +51,22 @@ video.addEventListener("error",()=>video.classList.remove("is-ready"));
 document.querySelector("#media-toggle").addEventListener("click",()=>{sequencePaused=!sequencePaused;const b=document.querySelector("#media-toggle");if(sequencePaused){video.pause();b.textContent="▶";b.setAttribute("aria-label","Play video sequence");}else{b.textContent="Ⅱ";b.setAttribute("aria-label","Pause video sequence");if(video.ended){heroIndex=(heroIndex+1)%HERO_VIDEOS.length;loadHero(heroIndex);}else if(!video.src)loadHero(heroIndex);else video.play().catch(()=>{});}});
 reducedMotion.addEventListener?.("change",()=>{if(reducedMotion.matches){video.pause();video.removeAttribute("src");video.classList.remove("is-ready");}else if(!sequencePaused)loadHero(heroIndex);});
 renderProducts();setupProductVideoHover();renderReviews();if(!reducedMotion.matches)loadHero(heroIndex);
+const contactForm=document.querySelector("#contact-form-fields");
+if(contactForm){
+ contactForm.addEventListener("submit",event=>{
+  event.preventDefault();
+  const error=document.querySelector("#contact-error");
+  error.textContent="";
+  if(!contactForm.reportValidity())return;
+  const data=new FormData(contactForm);
+  const name=String(data.get("name")||"").trim();
+  const email=String(data.get("email")||"").trim();
+  const phone=String(data.get("phone")||"").trim();
+  const message=String(data.get("message")||"").trim();
+  if(!name||!email||!phone||!message){error.textContent="Please complete every required field.";return;}
+  const body="Hello CleverNext, I’d like to get in touch.\n\nName: "+name+"\nEmail: "+email+"\nPhone: "+phone+"\n\nMessage:\n"+message;
+  const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(body);
+  const opened=window.open(url,"_blank","noopener,noreferrer");
+  if(!opened){error.textContent="Your browser blocked the new tab. Please allow pop-ups and try again.";}
+ });
+}
