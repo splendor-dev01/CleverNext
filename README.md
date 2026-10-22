@@ -16,3 +16,7 @@ Open `index.html` in a browser or serve the repository root with any static serv
 No verified product prices, stock feed, delivery fees/coverage, official WhatsApp number, bank details, or order backend are present in this repository. These have not been invented. Product cards therefore show **Price on request** and the enquiry interaction is not an order or payment confirmation. The product page also intentionally avoids fabricated prices, discounts, stock claims and unverified technical specifications. Its quantity selector is included in a WhatsApp enquiry; it does not reserve stock or create an order.
 
 Configure `WHATSAPP_NUMBER` in `app.js` with the official business number (digits only, international format) once confirmed. Production checkout requires a secure backend, confirmed prices/inventory/delivery, payment verification, persisted customer orders and admin order controls.
+
+
+## Launch-readiness audit
+See [LAUNCH_READINESS_AUDIT.md](LAUNCH_READINESS_AUDIT.md) for the pre-launch checklist and phased implementation plan. This source review does not claim hosting, legal compliance, performance, or live-browser tests have already passed.
