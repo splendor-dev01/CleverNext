@@ -71,3 +71,21 @@
 .product-page-body .detail-price-row small{font-size:11px;color:#555d56}
 .product-page-body .detail-order-button{width:auto;min-width:132px;min-height:46px;justify-content:center;gap:12px;padding:0 18px;font-size:14px;border-radius:7px;margin-top:14px}
 @media(max-width:640px){.product-page-body .detail-price{font-size:22px}.product-page-body .detail-price-row small{font-size:10px}.product-page-body .detail-order-button{min-width:124px;min-height:44px}}
+
+.product-bottom .price-note{display:flex;align-items:flex-start;line-height:1.15}
+.product-bottom .price-note strong{font:800 19px/1.1 Manrope,sans-serif;letter-spacing:-.04em;color:#171b18}
+.detail-price-stack{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.detail-was-price{font:600 14px/1.2 Manrope,sans-serif;color:#c43c3c;text-decoration:line-through;text-decoration-color:#c43c3c;text-decoration-thickness:2px}
+.detail-was-price[hidden]{display:none}
+.product-review-section{margin:0 5.1% 90px;padding:clamp(24px,5vw,54px);background:#f0f3ed;border:1px solid #e1e6df;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,6vw,80px);align-items:start}
+.product-review-heading h2{font:600 clamp(28px,3.8vw,43px)/1.08 Manrope,sans-serif;letter-spacing:-.065em;margin:17px 0 12px}
+.product-review-heading p{font-size:13px;line-height:1.85;color:#6d766e;max-width:440px}
+.product-review-form{display:flex;flex-direction:column;gap:16px}
+.product-review-form label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;color:#343c35}
+.product-review-form label>span{color:#b33b3b;display:inline}
+.product-review-form input,.product-review-form select,.product-review-form textarea{width:100%;border:1px solid #d5ddd4;background:#fbfcf9;padding:13px 14px;font:400 14px/1.5 "DM Sans",sans-serif;color:var(--ink);border-radius:2px;min-width:0}
+.product-review-form input:focus,.product-review-form select:focus,.product-review-form textarea:focus{outline:2px solid #8fa595;outline-offset:2px}
+.product-review-form textarea{resize:vertical;min-height:120px}
+.product-review-form .review-privacy-note,.review-form-status{font-size:11px;line-height:1.7;color:#687269;margin:0}
+.product-review-form .button{width:100%;justify-content:space-between;border:0}
+@media(max-width:760px){.product-review-section{grid-template-columns:1fr;gap:20px;padding:24px 18px}.product-review-form{gap:14px}.detail-was-price{font-size:13px}}
