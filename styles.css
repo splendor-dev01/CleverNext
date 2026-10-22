@@ -155,3 +155,23 @@ body{font-size:16px}.desktop-nav a{font-size:14px}.header-shop{font-size:13px}.e
 /* Shorter, more deliberate editorial copy blocks */
 .reveal-item{will-change:opacity,transform}
 .info-hero.reveal-item,.info-content h2.reveal-item,.info-content .info-callout.reveal-item{transition-duration:.65s}
+
+
+/* Performance + compact catalogue cards (2026-10) */
+/* Keep the brand readable on the light sticky header; remove the phantom/placeholder logo treatment. */
+.site-header .wordmark{color:#202521!important;text-shadow:none!important}
+.site-header .logo-placeholder,.site-header .logo-placeholder-label{display:none!important}
+/* Compact product card hierarchy, especially on narrow phones. */
+.product-info h3{font-size:13px!important;line-height:1.25!important;letter-spacing:-.025em!important;font-weight:700!important}
+.product-description{display:none!important}
+.product-bottom .price-note strong{font-size:10px!important;line-height:1.2!important;letter-spacing:-.02em!important}
+.product-bottom .price-note,.product-bottom .enquire-link{font-size:9px!important}
+@media(max-width:640px){.product-info h3{font-size:11px!important;line-height:1.25!important;margin:6px 0 4px!important}.product-bottom .price-note strong{font-size:9px!important}.product-bottom{margin-top:7px!important;padding-top:7px!important}}
+/* Avoid GPU layer bloat and decorative motion delaying the first useful frame. */
+.reveal-item{will-change:auto!important;transition-duration:.18s!important;transition-delay:0s!important}
+.product-card.reveal-item:nth-child(n){transition-delay:0s!important}
+.hero-media video{transition:none!important;animation:none!important}
+.hero-product-copy .hero-kicker,.hero-product-copy h1,.hero-tags{animation:none!important}
+.product-image{transition:transform .18s ease!important}
+.product-hover-video{transition:opacity .12s linear!important;backface-visibility:hidden}
+@media(prefers-reduced-motion:reduce){.product-hover-video{display:none!important}}
