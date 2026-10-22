@@ -66,7 +66,7 @@ if(contactForm){
   if(!name||!email||!phone||!message){error.textContent="Please complete every required field.";return;}
   const body="Hello CleverNext, I’d like to get in touch.\n\nName: "+name+"\nEmail: "+email+"\nPhone: "+phone+"\n\nMessage:\n"+message;
   const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(body);
-  const opened=window.open(url,"_blank","noopener,noreferrer");
-  if(!opened){error.textContent="Your browser blocked the new tab. Please allow pop-ups and try again.";}
+  const opened=window.open(url,"_blank");
+  if(opened){opened.opener=null;}else{error.textContent="Your browser blocked the new tab. Please allow pop-ups and try again.";}
  });
 }
