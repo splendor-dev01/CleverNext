@@ -1,12 +1,12 @@
 // CleverNext storefront. Configure only verified business details before accepting orders.
 const WHATSAPP_NUMBER = ""; // Official business number, digits only with country code, once confirmed.
 const HERO_VIDEOS=[
-{src:"Hero-Section-Videos/Spin_scrubber_cleaning_bathroom.mp4",caption:"A smarter clean-up"},
-{src:"Hero-Section-Videos/Person_operating_mini_food_chopper.mp4",caption:"Prep for everyday"},
-{src:"Hero-Section-Videos/Person_cleaning_ceiling_fan_blade.mp4",caption:"Reach the little corners"},
-{src:"Hero-Section-Videos/Handheld_vacuum_cleaning_car_seat.mp4",caption:"Freshen up your space"},
-{src:"Hero-Section-Videos/Hand_scrubbing_plate_with_brush.mp4",caption:"A better kitchen routine"},
-{src:"Hero-Section-Videos/Hand_removing_pet_hair_sofa.mp4",caption:"Keep home feeling like home"}];
+{src:"Hero-Section-Videos/Spin_scrubber_cleaning_bathroom.mp4",title:"Electric Spin Scrubber",tags:["POWERFUL CLEAN","LESS SCRUBBING","EVERYDAY ESSENTIAL"]},
+{src:"Hero-Section-Videos/Person_operating_mini_food_chopper.mp4",title:"Electric Mini Food Chopper",tags:["QUICK PREP","COMPACT DESIGN","KITCHEN ESSENTIAL"]},
+{src:"Hero-Section-Videos/Person_cleaning_ceiling_fan_blade.mp4",title:"Extendable Microfiber Duster",tags:["REACH HIGHER","DUST WITH EASE","CLEAN EVERY CORNER"]},
+{src:"Hero-Section-Videos/Handheld_vacuum_cleaning_car_seat.mp4",title:"Compact Cordless Vacuum",tags:["QUICK CLEAN-UPS","CORDLESS CONVENIENCE","FRESHEN YOUR SPACE"]},
+{src:"Hero-Section-Videos/Hand_scrubbing_plate_with_brush.mp4",title:"Soap-Dispensing Dish Brush",tags:["SOAP WHEN YOU NEED IT","EASY DISH CARE","KITCHEN ESSENTIAL"]},
+{src:"Hero-Section-Videos/Hand_removing_pet_hair_sofa.mp4",title:"Reusable Pet-Hair Remover",tags:["LIFT PET HAIR","REUSABLE DESIGN","SOFA-FRIENDLY CLEAN"]}];
 const PRODUCTS=[
 {id:"spin-scrubber",name:"Electric Spin Scrubber",category:"cleaning",categoryLabel:"Cleaning",descriptor:"A powered helper for your cleaning routine.",image:"Electric_Spin-S/Images/Image1.jpg",badge:"Clean smarter"},
 {id:"mini-chopper",name:"Electric Mini Food Chopper",category:"kitchen",categoryLabel:"Kitchen",descriptor:"A compact companion for everyday prep.",image:"Electric_Mini%20FC/Images/Image1.png",badge:"Kitchen essential"},
@@ -31,7 +31,7 @@ document.querySelector("#menu-toggle").addEventListener("click",e=>{const n=docu
 document.querySelectorAll(".desktop-nav a").forEach(a=>a.addEventListener("click",()=>{document.querySelector(".desktop-nav").classList.remove("open");document.querySelector("#menu-toggle").setAttribute("aria-expanded","false");}));
 document.querySelector("#year").textContent=new Date().getFullYear();
 const video=document.querySelector("#hero-video");
-function loadHero(i){const item=HERO_VIDEOS[i];video.classList.remove("is-ready");document.querySelector("#hero-media-caption").textContent=item.caption;document.querySelector("#media-counter").textContent=String(i+1).padStart(2,"0")+" / 06";if(reducedMotion.matches){video.pause();video.removeAttribute("src");return;}video.src=item.src;video.load();video.play().catch(()=>{sequencePaused=true;document.querySelector("#media-toggle").textContent="▶";document.querySelector("#media-toggle").setAttribute("aria-label","Play video sequence");});}
+function loadHero(i){const item=HERO_VIDEOS[i];video.classList.remove("is-ready");document.querySelector("#hero-product-title").textContent=item.title;const tags=document.querySelector("#hero-tags");tags.innerHTML=item.tags.map(tag=>`<span>${esc(tag)}</span>`).join("");const overlay=document.querySelector(".hero-product-overlay");overlay.classList.remove("is-switching");void overlay.offsetWidth;overlay.classList.add("is-switching");document.querySelector("#media-counter").textContent=String(i+1).padStart(2,"0")+" / 06";if(reducedMotion.matches){video.pause();video.removeAttribute("src");return;}video.src=item.src;video.load();video.play().catch(()=>{sequencePaused=true;document.querySelector("#media-toggle").textContent="▶";document.querySelector("#media-toggle").setAttribute("aria-label","Play video sequence");});}
 video.addEventListener("loadeddata",()=>video.classList.add("is-ready"));
 video.addEventListener("ended",()=>{if(!sequencePaused){heroIndex=(heroIndex+1)%HERO_VIDEOS.length;loadHero(heroIndex);}});
 video.addEventListener("error",()=>video.classList.remove("is-ready"));
