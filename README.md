@@ -13,9 +13,9 @@ Open `index.html` in a browser or serve the repository root with any static serv
 - Product enquiries, FAQs and brand story
 
 ## Required before taking orders
-No verified product prices, stock feed, delivery fees/coverage, official WhatsApp number, bank details, or order backend are present in this repository. These have not been invented. Product cards therefore show **Price on request** and the enquiry interaction is not an order or payment confirmation. The product page also intentionally avoids fabricated prices, discounts, stock claims and unverified technical specifications. Its quantity selector is included in a WhatsApp enquiry; it does not reserve stock or create an order.
+Current source configuration: all six product cards and detail pages are set to **₦50,000** each, and the WhatsApp enquiry number is configured in `app.js` and `product-page.js`. These values must be verified by the business operator before launch; the repository does not prove that prices or contact details are correct. The site has no live stock feed, delivery-fee calculator, payment processing, order database or fulfilment controls. WhatsApp messages are enquiries only, not confirmed orders or payment receipts. The product pages intentionally avoid fabricated discounts, stock claims and unverified technical specifications. Quantity is included in an enquiry but does not reserve stock or create an order.
 
-Configure `WHATSAPP_NUMBER` in `app.js` with the official business number (digits only, international format) once confirmed. Production checkout requires a secure backend, confirmed prices/inventory/delivery, payment verification, persisted customer orders and admin order controls.
+Before launch, verify the current price and official WhatsApp number for every product/contact surface. Production checkout requires a secure backend, confirmed prices/inventory/delivery, server-side payment verification, persisted customer orders and admin order controls.
 
 
 ## Launch-readiness audit
