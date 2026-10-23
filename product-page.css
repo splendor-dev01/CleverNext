@@ -89,3 +89,9 @@
 .product-review-form .review-privacy-note,.review-form-status{font-size:11px;line-height:1.7;color:#687269;margin:0}
 .product-review-form .button{width:100%;justify-content:space-between;border:0}
 @media(max-width:760px){.product-review-section{grid-template-columns:1fr;gap:20px;padding:24px 18px}.product-review-form{gap:14px}.detail-was-price{font-size:13px}}
+
+
+/* Verified availability styling for the confirmed spin scrubber listing */
+.product-stock-badge{position:absolute;left:12px;top:43px;z-index:2;display:inline-flex;align-items:center;padding:7px 10px;border-radius:3px;background:#dcfce7;color:#166534;border:1px solid #bbf7d0;font-size:9px;font-weight:800;letter-spacing:.04em;text-transform:none;box-shadow:0 2px 8px rgba(22,101,52,.08)}
+.product-page-body .stock-status-pill{display:inline-flex;align-items:center;gap:7px;background:#dcfce7;color:#166534;border:1px solid #bbf7d0;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700;line-height:1}
+.product-page-body .stock-status-pill:before{content:"";width:7px;height:7px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.12)}
